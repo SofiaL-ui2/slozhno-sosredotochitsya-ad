@@ -1,80 +1,41 @@
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+/*
+  Специально для тёмной темы при наличии класса,
+  здесь окажутся стили, которые нужно переопределить принудительно,
+  переключая тему
+*/
+
+:root.theme-dark {
+  /* сохраните этот селектор в приведённом виде.
+    Так стили написанные ниже будут иметь больший вес,
+    чем стили в медиазапросе предпочтений пользователя
+  */
+    --title-color: #FF0070;
+    --secondary-title-color: #000028;
+    --big-title:#DB00FF;
+    --shadow-big-title: #FF0070;
+    --background-title: #FF0070;
+    --text-color: #F1B2CE;
+    --action-display-lamp: flex;
+    --opacity-outline: #FF007066;
 }
 
-html,
-body {
-  margin: 0;
-  padding: 0;
-  font-size: 100%;
-}
-.page.theme_dark {
-  --background-color: #000028;
-  --background-image: url('../images/cover-image-dark.png');
-  --title-color: #db00ff;
-  --header-text-color: #000028;
-  --decorated-color: #ff0070;
-  --decorated-color-40: #ff007066;
-  --section-title-color: #ff0070;
-  --article-title-color: #000028;
-  --accent-color: #ff0070;
-  --text-color: #f1b2ce;
-
-  background-attachment: fixed;
-  background-image: var(--background-image);
-  background-color: var(--background-color);
-}
-
-.page.theme_dark .recording {
-  display: block;
-}
-
-@media (max-width: 1024px) {
-  .page {
-    padding: 30px;
-  }
-}
-
-@media (max-width: 768px) {
-  .page {
-    padding: 20px;
-  }
-  header {
-    min-height: auto;
-  }
-}
-
-@media (max-width: 375px) {
-  .page {
-    padding: 10px;
-  }
-  h1 {
-    font-size: 1.5rem;
-  }
+.theme-dark .page {
+  /* Вам также нужно будет написать ряд подобных селекторов */
+  --header-background: url(../images/cover-image-dark.png);
+  --theme-color: #000028;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background-color: #000028;
-    --background-image: url('../images/cover-image-dark.png');
-    --title-color: #db00ff;
-    --header-text-color: #000028;
-    --decorated-color: #ff0070;
-    --decorated-color-40: #ff007066;
-    --section-title-color: #ff0070;
-    --article-title-color: #000028;
-    --accent-color: #ff0070;
-    --text-color: #f1b2ce;
+    --title-color: #FF0070;
+    --secondary-title-color: #000028;
+    --big-title:#DB00FF;
+    --shadow-big-title: #FF0070;
+    --background-title: #FF0070;
+    --text-color: #F1B2CE;
+    --action-display-lamp: flex;
+    --opacity-outline: #FF007066;
+    --header-background: url(../images/cover-image-dark.png);
+    --theme-color: #000028;
   }
-
-  body {
-    background-color: var(--background-color);
-    background-image: var(--background-image);
-  }
-}
-
-.recording {
-  display: block;
 }
