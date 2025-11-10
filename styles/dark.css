@@ -1,35 +1,80 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+}
 .page.theme_dark {
-	--background-color: url(--color-dark-blue, #000028);
-	--background-image: url('../images/cover-image-dark.png');
-	--title-color: var(--color-pink-second, #db00ff);
-	--header-text-color: var(--color-dark-blue, #000028);
-	--decorated-color: var(--color-pink-first, #ff0070);
-	--decorated-color-40: var(--color-pink-third-40, #ff007040);
-	--section-title-color: var(--color-pink-first, #ff0070);
-	--article-title-color: var(--color-dark-blue, #000028);
-	--accent-color: var(--color-pink-first, #ff0070);
-	--text-color: var(--color-pink-fourth, #f1b2ce);
+  --background-color: #000028;
+  --background-image: url('../images/cover-image-dark.png');
+  --title-color: #db00ff;
+  --header-text-color: #000028;
+  --decorated-color: #ff0070;
+  --decorated-color-40: #ff007066;
+  --section-title-color: #ff0070;
+  --article-title-color: #000028;
+  --accent-color: #ff0070;
+  --text-color: #f1b2ce;
+
+  background-attachment: fixed;
+  background-image: var(--background-image);
+  background-color: var(--background-color);
 }
 
 .page.theme_dark .recording {
-	display: block;
+  display: block;
+}
+
+@media (max-width: 1024px) {
+  .page {
+    padding: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .page {
+    padding: 20px;
+  }
+  header {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 375px) {
+  .page {
+    padding: 10px;
+  }
+  h1 {
+    font-size: 1.5rem;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
-	:root {
-		--background-color: url(--color-dark-blue, #000028);
-		--background-image: url('../images/cover-image-dark.png');
-		--title-color: var(--color-pink-second, #db00ff);
-		--header-text-color: var(--color-dark-blue, #000028);
-		--decorated-color: var(--color-pink-first, #ff0070);
-		--decorated-color-40: var(--color-pink-third-40, #ff007040);
-		--section-title-color: var(--color-pink-first, #ff0070);
-		--article-title-color: var(--color-dark-blue, #000028);
-		--accent-color: var(--color-pink-first, #ff0070);
-		--text-color: var(--color-pink-fourth, #f1b2ce);
-	}
+  :root {
+    --background-color: #000028;
+    --background-image: url('../images/cover-image-dark.png');
+    --title-color: #db00ff;
+    --header-text-color: #000028;
+    --decorated-color: #ff0070;
+    --decorated-color-40: #ff007066;
+    --section-title-color: #ff0070;
+    --article-title-color: #000028;
+    --accent-color: #ff0070;
+    --text-color: #f1b2ce;
+  }
 
-	.recording {
-		display: block;
-	}
+  body {
+    background-color: var(--background-color);
+    background-image: var(--background-image);
+  }
+}
+
+.recording {
+  display: block;
 }
