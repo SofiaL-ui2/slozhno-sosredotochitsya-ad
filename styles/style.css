@@ -30,7 +30,6 @@
   display: inline-flex;
   width: 9px;
   height: 9px;
-  border-radius: 50%;
   background-color: var(--title-color);
   box-shadow: 0 0 4px 2px;
 }
